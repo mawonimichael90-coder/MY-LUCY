@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Lucy ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* all original styles — exactly preserved */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --light-pink: #ffccd5;
+            --white: #fff0f3;
+            --dark: #590d22;
+            --gold: #ffd166;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+            color: #590d22;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating hearts background */
+        .hearts-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 77, 109, 0.2);
+            font-size: 20px;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header styling */
+        header {
+            padding: 40px 20px 20px;
+            position: relative;
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .name-highlight {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        /* Photo section */
+        .photo-section {
+            margin: 40px auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 15px solid var(--white);
+            box-shadow: 
+                0 15px 35px rgba(255, 77, 109, 0.4),
+                inset 0 0 30px rgba(255, 255, 255, 0.8);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+            animation: spinImage 12s infinite linear;
+            transform-origin: center center;
+            border-radius: 50%;
+        }
+
+        @keyframes spinImage {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-frame:hover img {
+            animation-play-state: paused;
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+
+        .photo-frame::before {
+            content: "❤️";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 2.5rem;
+            z-index: 2;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.2); }
+        }
+
+        .photo-frame::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent 50%, rgba(255, 77, 109, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .photo-glow {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, var(--primary), transparent);
+            z-index: -1;
+            opacity: 0.3;
+            animation: glowRotate 8s linear infinite;
+        }
+
+        @keyframes glowRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .love-message {
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            margin: 50px auto;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 77, 109, 0.1);
+        }
+
+        .love-message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 12px 0 0 12px;
+        }
+
+        .love-message::after {
+            content: "❤️";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+
+        .message-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .message-text {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            text-align: left;
+            margin-bottom: 25px;
+            padding: 0 20px;
+        }
+
+        .message-text p {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .message-text p::before {
+            content: "❤";
+            position: absolute;
+            left: -10px;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: right;
+            margin-top: 40px;
+            padding-right: 30px;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .signature::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 30px;
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary));
+            border-radius: 3px;
+        }
+
+        .memories-section {
+            margin: 70px auto;
+            max-width: 1100px;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            border-radius: 3px;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .memory-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 77, 109, 0.1);
+        }
+
+        .memory-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(255, 77, 109, 0.2);
+        }
+
+        .memory-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .memory-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .memory-desc {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .countdown-section {
+            margin: 70px auto;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 50px 40px;
+            border-radius: 25px;
+            color: white;
+            max-width: 900px;
+            box-shadow: 0 15px 40px rgba(255, 77, 109, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.05"/></svg>');
+            pointer-events: none;
+        }
+
+        .countdown-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 25px 20px;
+            border-radius: 15px;
+            min-width: 150px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .countdown-label {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .interactive-section {
+            margin: 70px auto;
+            max-width: 900px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .heart-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.3);
+            position: relative;
+            overflow: hidden;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .heart-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .heart-btn:hover::before {
+            left: 100%;
+        }
+
+        .heart-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.4);
+        }
+
+        .heart-btn:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .secret-message {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            display: none;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-out;
+            border: 1px solid rgba(255, 77, 109, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .secret-message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 60%, rgba(255, 77, 109, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark), #3c0614);
+            color: var(--white);
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-heart {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 25px;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        .footer-text {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: var(--light-pink);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--white);
+            border-radius: 50px;
+            padding: 12px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-pink);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary), var(--secondary));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--secondary), var(--primary));
+        }
+
+        @media (max-width: 992px) {
+            .title {
+                font-size: 3.2rem;
+            }
+            
+            .photo-frame {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .memories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 120px;
+                padding: 20px 15px;
+            }
+            
+            .countdown-value {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.8rem;
+            }
+            
+            .photo-frame {
+                width: 220px;
+                height: 220px;
+                border-width: 10px;
+            }
+            
+            .love-message {
+                padding: 30px 20px;
+            }
+            
+            .message-title {
+                font-size: 2.5rem;
+            }
+            
+            .message-text {
+                font-size: 1.1rem;
+                padding: 0 10px;
+            }
+            
+            .memories-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .countdown-item {
+                min-width: 100px;
+                padding: 15px 10px;
+            }
+            
+            .countdown-value {
+                font-size: 2.2rem;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .heart-btn {
+                width: 90%;
+                justify-content: center;
+            }
+            
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .photo-frame {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 12px 8px;
+            }
+            
+            .countdown-value {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* NEW: overlay for valentine popup */
+        .valentine-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        .valentine-card {
+            background: var(--white);
+            max-width: 500px;
+            width: 90%;
+            padding: 40px 30px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(255,77,109,0.4);
+            text-align: center;
+            border: 5px solid var(--primary);
+            position: relative;
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.2); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .valentine-card h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .valentine-card p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        .valentine-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .valentine-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 15px 40px;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(255,77,109,0.5);
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+        .valentine-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255,77,109,0.7);
+        }
+        .valentine-btn.no {
+            background: #aaa;
+            box-shadow: none;
+        }
+        .valentine-btn.no:hover {
+            transform: scale(1.05);
+            background: #999;
+        }
+        /* hide main content initially */
+        .main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background (visible behind overlay) -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+
+    <!-- VALENTINE POPUP (appears first) -->
+    <div id="valentineOverlay" class="valentine-overlay">
+        <div class="valentine-card">
+            <h2>My Beautiful Lucy</h2>
+            <p>Will you be my Valentine? ❤️</p>
+            <div class="valentine-buttons">
+                <button class="valentine-btn" id="yesValentine">YES!</button>
+                <button class="valentine-btn no" id="noValentine">Yes 💕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT (hidden initially) -->
+    <div class="main-content" id="mainContent">
+        <!-- Music player (inside main, but visible only after unlock) -->
+        <div class="music-player">
+            <button class="music-btn" id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <span style="font-weight: 600; color: var(--dark);">Our Love Song</span>
+            <audio id="loveSong" loop>
+                <source src="Award_Y_obulungi__Temperature_Touch___Official__Music_Video__(256k).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="container">
+            <!-- Header -->
+            <header>
+                <h1 class="title">For My Beautiful Lucy ❤️</h1>
+                <p class="subtitle">This special website is created with all my love for the most amazing person in my life</p>
+                <div class="name-highlight">My heart holder Lucy</div>
+            </header>
+
+            <!-- Photo section -->
+            <section class="photo-section">
+                <div class="photo-frame" id="lucyPhotoFrame">
+                    <div class="photo-glow"></div>
+                    <img src="C:\Users\MICHEAL\Desktop\LUCY\Lucy\Lucy.jpg" alt="Beautiful Lucy" id="lucyPhoto">
+                </div>
+                <p style="font-size: 1.3rem; margin-top: 15px; color: var(--dark); font-weight: 600;">The woman who stole my heart ❤️</p>
+            </section>
+
+            <!-- Love message -->
+            <section class="love-message">
+                <h2 class="message-title">My Dearest Lucy,</h2>
+                <div class="message-text">
+                    <p>From the moment our paths crossed, my world transformed in ways I never imagined possible. Your presence alone has the power to turn ordinary moments into extraordinary memories, and my life has been infinitely brighter since you became a part of it.</p>
+                    
+                    <p>I cherish every laugh we share, every conversation that stretches into the night, and every quiet moment when words aren't needed because our hearts speak the same language. Your smile is my favorite sight, your laughter my favorite sound, and your love my greatest treasure.</p>
+                    
+                    <p>You are the epitome of grace - in your name and in your being. Your kindness touches everyone around you, your strength inspires me daily, and your beautiful soul makes me want to be a better person. You're not just my girlfriend; you're my sanctuary, my inspiration, and my greatest adventure.</p>
+                    
+                    <p>On this day dedicated to love, I want you to know that my love for you isn't confined to Valentine's Day. It's a constant, growing force that colors every moment of my life. I promise to cherish you, support your dreams, and love you more with each passing day.</p>
+                    
+                    <p>Thank you for being you - perfectly, wonderfully you. Thank you for choosing to share your life with me. I am, and will always be, the luckiest person in the world to call you mine.</p>
+                </div>
+                <div class="signature">Forever Yours</div>
+            </section>
+
+            <!-- Memories section -->
+            <section class="memories-section">
+                <h2 class="section-title">Why I Adore You</h2>
+                <div class="memories-grid">
+                    <div class="memory-card">
+                        <i class="fas fa-heart"></i>
+                        <h3 class="memory-title">Your Compassion</h3>
+                        <p class="memory-desc">The way you care for others shows the depth of your beautiful heart. Your empathy makes this world a better place.</p>
+                    </div>
+                    <div class="memory-card">
+                        <i class="fas fa-star"></i>
+                        <h3 class="memory-title">Your Brilliance</h3>
+                        <p class="memory-desc">Your intelligence and wisdom constantly impress me. I love our deep conversations and learning from you.</p>
+                    </div>
+                    <div class="memory-card">
+                        <i class="fas fa-sun"></i>
+                        <h3 class="memory-title">Your Positivity</h3>
+                        <p class="memory-desc">Your optimism lights up every room. You find beauty in simple things and teach me to do the same.</p>
+                    </div>
+                    <div class="memory-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3 class="memory-title">Your Support</h3>
+                        <p class="memory-desc">You believe in me even when I doubt myself. Your encouragement gives me strength to overcome any challenge.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Countdown timer -->
+            <section class="countdown-section">
+                <h2 class="countdown-title">Counting the Moments Until I See You</h2>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 1.2rem; opacity: 0.9;">Every second away from you feels like an eternity</p>
+            </section>
+
+            <!-- Interactive section -->
+            <section class="interactive-section">
+                <h2 class="section-title">Special Surprises For You</h2>
+                <p style="margin-bottom: 40px; font-size: 1.3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Click the buttons below to discover sweet messages I've hidden just for you!</p>
+                
+                <div class="buttons-container">
+                    <button class="heart-btn" id="revealBtn">
+                        <i class="fas fa-gift"></i> Open Your Gift
+                    </button>
+                    
+                    <button class="heart-btn" id="loveLetterBtn">
+                        <i class="fas fa-envelope"></i> Love Letter
+                    </button>
+                    
+                    <button class="heart-btn" id="promisesBtn">
+                        <i class="fas fa-handshake"></i> My Promises
+                    </button>
+                </div>
+                
+                <div class="secret-message" id="secretMessage">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 2rem; font-family: 'Dancing Script', cursive;">A Special Gift For You</h3>
+                    <p style="font-size: 1.3rem; line-height: 1.8; text-align: center;">My darling Lucy, this digital gift is a small token of my endless love for you. I promise to give you my heart, my time, and my devotion every single day. You deserve the world, and I will spend my life trying to give it to you. Always remember how deeply and completely you are loved. 💝</p>
+                </div>
+                
+                <div class="secret-message" id="loveLetter">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 2rem; font-family: 'Dancing Script', cursive;">My Love Letter</h3>
+                    <div style="font-size: 1.2rem; line-height: 1.8;">
+                        <p>My Dearest Lucy,</p>
+                        <p>As I write these words, my heart overflows with love for you. There aren't enough pages in all the books in the world to contain everything I feel for you.</p>
+                        <p>I love the way your eyes sparkle when you talk about your dreams. I love how you bite your lip when you're thinking. I love the sound of your laughter - it's the melody that makes my world complete.</p>
+                        <p>With you, I've discovered a love I never knew existed. A love that's patient, kind, and unconditional. A love that makes me want to be better, to dream bigger, to love deeper.</p>
+                        <p>You are my today, my tomorrow, and all my forever's. No matter where life takes us, my heart will always find its way back to you.</p>
+                        <p>All my love, now and always,</p>
+                        <p style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin-top: 30px; color: var(--primary);">Your forever love ❤️</p>
+                    </div>
+                </div>
+                
+                <div class="secret-message" id="promises">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 2rem; font-family: 'Dancing Script', cursive;">My Promises To You</h3>
+                    <div style="font-size: 1.2rem; line-height: 1.8;">
+                        <p>I promise to always...</p>
+                        <ul style="list-style: none; padding-left: 20px;">
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Listen</strong> to you with my full attention and an open heart</li>
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Support</strong> your dreams and cheer for your successes</li>
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Respect</strong> you as an equal partner in our relationship</li>
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Comfort</strong> you during difficult times and celebrate with you in happy ones</li>
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Grow</strong> with you, learning and evolving together</li>
+                            <li style="margin-bottom: 15px; position: relative; padding-left: 30px;">❤️ <strong>Love</strong> you more each day, with all that I am</li>
+                        </ul>
+                        <p style="margin-top: 25px; font-style: italic; text-align: center;">These promises are not just for today, but for every day of our lives together.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-heart">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="footer-text">To the woman who makes every sunrise more beautiful and every sunset more peaceful. You are my greatest blessing, my deepest love, and my most beautiful dream come true. Thank you for being the amazing person you are.</p>
+                    <div class="footer-signature">Forever and Always, My Lucy</div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // All original functions preserved exactly, but we'll call them after unlock.
+            // ---------- ORIGINAL HELPER FUNCTIONS (unchanged) ----------
+            function createHearts() {
+                const heartsContainer = document.getElementById('heartsContainer');
+                if (!heartsContainer) return;
+                const heartCount = 50;
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤️';
+                    const left = Math.random() * 100;
+                    const size = Math.random() * 20 + 10;
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 20;
+                    heart.style.left = `${left}%`;
+                    heart.style.fontSize = `${size}px`;
+                    heart.style.animationDuration = `${duration}s`;
+                    heart.style.animationDelay = `${delay}s`;
+                    heartsContainer.appendChild(heart);
+                }
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const target = new Date();
+                target.setDate(now.getDate() + (6 - now.getDay() + 7) % 7);
+                target.setHours(18, 0, 0, 0);
+                if (now.getDay() === 6 && now.getHours() >= 18) {
+                    target.setDate(target.getDate() + 7);
+                }
+                const diff = target - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+
+            function createConfetti() {
+                const colors = ['#ff4d6d', '#ff8fa3', '#ffccd5', '#ffd166', '#ffffff'];
+                const confettiCount = 150;
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = `${Math.random() * 15 + 5}px`;
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    if (Math.random() > 0.5) {
+                        confetti.style.borderRadius = '50%';
+                    } else {
+                        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    }
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.top = '-20px';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.opacity = '0.9';
+                    document.body.appendChild(confetti);
+                    const animation = confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 3000 + 2000,
+                        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                    });
+                    animation.onfinish = () => {
+                        if (confetti.parentNode) confetti.remove();
+                    };
+                }
+            }
+
+            function createHeartBurst(element) {
+                const rect = element.getBoundingClientRect();
+                const heartCount = 20;
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.style.position = 'fixed';
+                    heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+                    heart.style.color = '#ff4d6d';
+                    heart.style.left = `${rect.left + rect.width/2}px`;
+                    heart.style.top = `${rect.top + rect.height/2}px`;
+                    heart.style.zIndex = '9999';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.opacity = '0';
+                    heart.style.textShadow = '0 0 10px white';
+                    document.body.appendChild(heart);
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 80 + Math.random() * 120;
+                    const targetX = Math.cos(angle) * distance;
+                    const targetY = Math.sin(angle) * distance;
+                    const animation = heart.animate([
+                        { transform: 'translate(0, 0) scale(0.5)', opacity: 0 },
+                        { transform: 'translate(0, 0) scale(1.2)', opacity: 1 },
+                        { transform: `translate(${targetX}px, ${targetY}px) scale(0.5)`, opacity: 0 }
+                    ], {
+                        duration: 1500,
+                        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                    });
+                    animation.onfinish = () => {
+                        if (heart.parentNode) heart.remove();
+                    };
+                }
+            }
+
+            function setupMainPageInteractivity() {
+                // Only attach listeners if elements exist (they do after unlock)
+                const revealBtn = document.getElementById('revealBtn');
+                const loveLetterBtn = document.getElementById('loveLetterBtn');
+                const promisesBtn = document.getElementById('promisesBtn');
+                const secretMessage = document.getElementById('secretMessage');
+                const loveLetter = document.getElementById('loveLetter');
+                const promises = document.getElementById('promises');
+                const playBtn = document.getElementById('playBtn');
+                const loveSong = document.getElementById('loveSong');
+                let isPlaying = false;
+
+                if (loveSong) loveSong.volume = 0.5;
+
+                function showMessage(messageElement, button) {
+                    secretMessage.style.display = 'none';
+                    loveLetter.style.display = 'none';
+                    promises.style.display = 'none';
+                    messageElement.style.display = 'block';
+                    createConfetti();
+                    button.style.background = 'linear-gradient(135deg, #590d22, var(--primary))';
+                    button.innerHTML = `<i class="fas fa-heart"></i> I Love You, Lucy!`;
+                    resetButtons();
+                    button.classList.add('active');
+                    messageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+
+                function resetButtons() {
+                    const buttons = [revealBtn, loveLetterBtn, promisesBtn];
+                    buttons.forEach(btn => {
+                        if (btn) {
+                            btn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                            btn.classList.remove('active');
+                        }
+                    });
+                    if (revealBtn) revealBtn.innerHTML = '<i class="fas fa-gift"></i> Open Your Gift';
+                    if (loveLetterBtn) loveLetterBtn.innerHTML = '<i class="fas fa-envelope"></i> Love Letter';
+                    if (promisesBtn) promisesBtn.innerHTML = '<i class="fas fa-handshake"></i> My Promises';
+                }
+
+                if (revealBtn) revealBtn.addEventListener('click', function() { showMessage(secretMessage, this); });
+                if (loveLetterBtn) loveLetterBtn.addEventListener('click', function() { showMessage(loveLetter, this); });
+                if (promisesBtn) promisesBtn.addEventListener('click', function() { showMessage(promises, this); });
+
+                const photoFrame = document.getElementById('lucyPhotoFrame');
+                const lucyImg = document.getElementById('lucyPhoto');
+                if (photoFrame) {
+                    photoFrame.addEventListener('click', function() {
+                        if (lucyImg) {
+                            if (lucyImg.style.animationPlayState === 'paused') {
+                                lucyImg.style.animationPlayState = 'running';
+                            } else {
+                                lucyImg.style.animationPlayState = 'paused';
+                            }
+                        }
+                        createHeartBurst(this);
+                        const message = document.createElement('div');
+                        message.textContent = 'I Love You!';
+                        message.style.position = 'absolute';
+                        message.style.color = 'var(--primary)';
+                        message.style.fontWeight = 'bold';
+                        message.style.fontSize = '1.2rem';
+                        message.style.pointerEvents = 'none';
+                        message.style.zIndex = '1000';
+                        message.style.textShadow = '0 2px 5px white';
+                        message.style.top = '50%';
+                        message.style.left = '50%';
+                        message.style.transform = 'translate(-50%, -50%)';
+                        this.appendChild(message);
+                        setTimeout(() => { if (this.contains(message)) this.removeChild(message); }, 2000);
+                    });
+                }
+
+                if (playBtn && loveSong) {
+                    playBtn.addEventListener('click', function() {
+                        if (isPlaying) {
+                            loveSong.pause();
+                            this.innerHTML = '<i class="fas fa-play"></i>';
+                            this.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                            isPlaying = false;
+                        } else {
+                            const playPromise = loveSong.play();
+                            if (playPromise !== undefined) {
+                                playPromise.then(() => {
+                                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                                    this.style.background = 'linear-gradient(135deg, #590d22, var(--primary))';
+                                    isPlaying = true;
+                                }).catch(error => {
+                                    console.log("Audio play failed:", error);
+                                    loveSong.load();
+                                    loveSong.play().then(() => {
+                                        this.innerHTML = '<i class="fas fa-pause"></i>';
+                                        this.style.background = 'linear-gradient(135deg, #590d22, var(--primary))';
+                                        isPlaying = true;
+                                    }).catch(err => {
+                                        console.log("Second attempt failed:", err);
+                                        alert("Please make sure both files (Lucy.jpg and the MP3) are accessible!");
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }
+
+                // Memory cards effect
+                const memoryCards = document.querySelectorAll('.memory-card');
+                memoryCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => { this.style.transform = ''; }, 200);
+                        const heart = document.createElement('div');
+                        heart.innerHTML = '❤️';
+                        heart.style.position = 'absolute';
+                        heart.style.fontSize = '20px';
+                        heart.style.color = 'var(--primary)';
+                        heart.style.top = '50%';
+                        heart.style.left = '50%';
+                        heart.style.transform = 'translate(-50%, -50%)';
+                        heart.style.opacity = '0';
+                        heart.style.zIndex = '1';
+                        heart.style.pointerEvents = 'none';
+                        this.appendChild(heart);
+                        const anim = heart.animate([
+                            { opacity: 0, transform: 'translate(-50%, -50%) scale(0)' },
+                            { opacity: 1, transform: 'translate(-50%, -100%) scale(1.5)' },
+                            { opacity: 0, transform: 'translate(-50%, -150%) scale(0.5)' }
+                        ], { duration: 800, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)' });
+                        anim.onfinish = () => { if (heart.parentNode) heart.remove(); };
+                    });
+                });
+            }
+
+            // ---------- VALENTINE OVERLAY LOGIC ----------
+            const overlay = document.getElementById('valentineOverlay');
+            const mainContent = document.getElementById('mainContent');
+            const yesBtn = document.getElementById('yesValentine');
+            const noBtn = document.getElementById('noValentine');
+
+            function unlockValentine() {
+                // Hide overlay with fade
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+                // Show main content
+                mainContent.style.display = 'block';
+                // Fire confetti
+                createConfetti();
+                // Initialize all original page features
+                createHearts();
+                setInterval(updateCountdown, 1000);
+                updateCountdown();
+                setupMainPageInteractivity();
+
+                // Add greeting banner (as original)
+                const now = new Date();
+                const hours = now.getHours();
+                let greeting = hours < 12 ? "Good Morning" : hours < 18 ? "Good Afternoon" : "Good Evening";
+                const greetingElement = document.createElement('div');
+                greetingElement.style.position = 'fixed';
+                greetingElement.style.top = '15px';
+                greetingElement.style.left = '15px';
+                greetingElement.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                greetingElement.style.padding = '12px 20px';
+                greetingElement.style.borderRadius = '25px';
+                greetingElement.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)';
+                greetingElement.style.zIndex = '1000';
+                greetingElement.style.fontSize = '1rem';
+                greetingElement.style.fontWeight = '600';
+                greetingElement.style.color = 'var(--dark)';
+                greetingElement.style.backdropFilter = 'blur(5px)';
+                greetingElement.style.border = '1px solid rgba(255, 77, 109, 0.2)';
+                greetingElement.innerHTML = `${greeting}, Beautiful Lucy ❤️`;
+                document.body.appendChild(greetingElement);
+
+                // Auto rotate messages from original
+                let messageIndex = 0;
+                const messages = [document.getElementById('secretMessage'), document.getElementById('loveLetter'), document.getElementById('promises')];
+                setInterval(() => {
+                    const activeBtn = document.querySelector('.heart-btn.active');
+                    if (!activeBtn) {
+                        messages.forEach(msg => { if (msg) msg.style.display = 'none'; });
+                        if (messages[messageIndex]) messages[messageIndex].style.display = 'block';
+                        createConfetti();
+                        messageIndex = (messageIndex + 1) % messages.length;
+                    }
+                }, 30000);
+            }
+
+            yesBtn.addEventListener('click', unlockValentine);
+            noBtn.addEventListener('click', unlockValentine); // both do the same
+
+            // Ensure main content hidden on load
+            mainContent.style.display = 'none';
+            // create hearts background anyway (it's behind overlay)
+            createHearts();
+        })();
+    </script>
+</body>
+</html>
